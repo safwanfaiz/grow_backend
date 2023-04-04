@@ -1,5 +1,5 @@
 const express = require("express");
-const { connect } = require("./config/db");
+const { connection } = require("./config/db");
 const cors = require("cors");
 const jwt = require("jsonwebtoken");
 
@@ -28,8 +28,8 @@ App.use(Auth)
 
 App.listen(8080, async () => {
     try {
-        await connect;
-        console.log(" connected to db");
+        await connection;
+        console.log(" connectioned to db");
     } catch (error) {
         console.log(error);
     }
